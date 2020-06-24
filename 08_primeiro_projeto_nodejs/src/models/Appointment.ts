@@ -8,7 +8,8 @@ class Appointment {
 
     date: Date;
 
-    constructor(provider: string, date: Date) {
+    // Omit: Sends all parameters (arg 1), but the omitted (arg2)
+    constructor({ provider, date }: Omit<Appointment, 'id'>) {
         this.id = uuid();
         this.provider = provider;
         this.date = date;
